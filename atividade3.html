@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-family: comic sans ms;
+        }
+    </style>
+    <title>🤠 Atividade 3 🤠</title>
+</head>
+
+<body>
+    <h1>🦆 Criador de sequencias crescentes 🦆</h1>
+    <h2>Abra o console com F12</h2>
+    <input class="um" type="number" placeholder="Escolha o valor1">
+    <input class="dois" type="number" placeholder="Escolha o valor2">
+    <button class="botao">Criar Sequencia</button>
+
+    <script>
+        let valor1 = document.querySelector(".um");
+        let valor2 = document.querySelector(".dois");
+        let btn = document.querySelector(".botao");
+
+        function calcular() {
+            let n1 = Number(valor1.value);
+            let n2 = Number(valor2.value);
+
+            if (n1 < n2) {
+                for (n1; n1 <= n2; n1++) {
+                    console.log('Valor1: ' + n1)
+                }
+            } else if (n2 < n1) {
+                console.log('oi2')
+                for (n2; n2 <= n1; n2++) {
+                    console.log('Valor2: ' + n2)
+                }
+            }
+        }
+
+        btn.addEventListener('click', calcular);
+
+
+    </script>
+</body>
+
+</html>
