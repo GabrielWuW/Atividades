@@ -1,21 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>*{font-family: comic sans ms;}</style>
+    <style>
+        * {
+            font-family: comic sans ms;
+        }
+    </style>
     <title>🥳 Atividade 5 🥳</title>
 </head>
+
 <body>
-    <h1>🌵 Calculadora de tabuada 🌵</h1>
+    <h1>🌵 Tabuada 🌵</h1>
+    <input id="input" type="text" placeholder="Digite um número">
+    <button id="botao">
+        Calcular!
+    </button>
+    <div class="container">
+
+    </div>
 
     <script>
-        let numero = prompt('Digite um número: ');
-        
-        for(i=1; i <= 10; i++) {
-            console.log(numero + ' * ' + i + ' = ' + numero * i);
+        const input = document.getElementById('input');
+        const botao = document.getElementById('botao');
+        const container = document.querySelector('.container');
+
+        function calcular() {
+            let valor = input.value;
+            let textos = document.querySelector('.texto');
+
+            container.innerHTML = '';
+            for (let i = 1; i <= 10; i++) {
+                setTimeout(() => {
+                    let conta = valor + ' * ' + i + ' = ' + valor * i;
+                    let resultado = document.createElement('p');
+                    resultado.textContent = conta;
+                    resultado.classList.add('texto');
+                    container.appendChild(resultado);
+                    console.log(conta);
+                }, i * 200);
+            }
         }
-        
+
+        botao.addEventListener('click', calcular);
+
+
     </script>
 </body>
+
 </html>
